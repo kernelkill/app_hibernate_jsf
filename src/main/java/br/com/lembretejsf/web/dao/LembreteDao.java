@@ -43,5 +43,52 @@ public class LembreteDao {
         }
     }
 
-    
+    public void atualizar(Lembrete lembrete) throws Exception {
+
+        EntityManager em  = JpaResourceBean.getEntityManagerFactory().createEntityManager();
+
+        try {
+            em.getTransaction().begin();
+            em.merge(lembrete);
+            em.getTransaction().commit();
+        }catch (Exception e){
+            em.getTransaction().rollback();
+
+            throw new Exception(e);
+
+        }finally {
+            em.close();
+        }
+    }
+
+    public void excluir(long id) throws Exception {
+
+        EntityManager em = JpaResourceBean.getEntityManagerFactory().createEntityManager();
+
+        try {
+            em.getTransaction().begin();
+            em.remove(id);
+            em.getTransaction().commit();
+        }catch (Exception e){
+            em.getTransaction().rollback();
+
+            throw new Exception(e);
+        }finally {
+            em.close();
+        }
+    }
+
+    public Lembrete selecionar(long id) throws Exception{
+
+        Lembrete lembrete;
+
+        EntityManager em = JpaResourceBean.getEntityManagerFactory().createEntityManager();
+
+        try {
+            lembrete = em.find(Lembrete.class, id);
+        }finally {
+            em.close();
+        }
+        return lembrete;
+    }
 }
