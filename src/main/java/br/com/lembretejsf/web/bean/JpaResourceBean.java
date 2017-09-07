@@ -7,7 +7,7 @@ public class JpaResourceBean {
 
     private static EntityManagerFactory entityManagerFactory;
 
-    private static EntityManagerFactory getEntityManagerFactory(){
+    public static EntityManagerFactory getEntityManagerFactory(){
 
         if (entityManagerFactory == null){
             entityManagerFactory = Persistence.createEntityManagerFactory("lembretejsf_db");
