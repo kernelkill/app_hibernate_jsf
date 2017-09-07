@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d6e7aca7-b87b-4d44-80a0-6a5dab8af702" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/br/com/lembretejsf/web/bean/JpaResourceBean.java" afterPath="$PROJECT_DIR$/src/main/java/br/com/lembretejsf/web/bean/JpaResourceBean.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/br/com/lembretejsf/web/dao/LembreteDao.java" afterPath="$PROJECT_DIR$/src/main/java/br/com/lembretejsf/web/dao/LembreteDao.java" />
     </list>
