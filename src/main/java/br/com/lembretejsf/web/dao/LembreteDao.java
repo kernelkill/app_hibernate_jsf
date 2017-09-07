@@ -24,4 +24,24 @@ public class LembreteDao {
 
         return lembretes;
     }
+
+    public void inserir(Lembrete lembrete) throws Exception {
+
+        EntityManager em = JpaResourceBean.getEntityManagerFactory().createEntityManager();
+
+        try {
+            em.getTransaction().begin();
+            em.merge(lembrete);
+            em.getTransaction().commit();
+        }catch (Exception e){
+            em.getTransaction().rollback();
+
+            throw new Exception(e);
+
+        }finally {
+            em.close();
+        }
+    }
+
+    
 }
